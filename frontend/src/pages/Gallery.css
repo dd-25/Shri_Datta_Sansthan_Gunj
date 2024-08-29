@@ -1,0 +1,170 @@
+.gallery-container {
+    padding: 20px;
+    background-color: #fff8e1; /* Light off-white background */
+    border-radius: 8px;
+    position: relative;
+    min-height: 80vh;
+}
+
+.directory-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to new lines */
+    gap: 10px;
+    margin-bottom: 80px; /* Space for the create button at the bottom */
+}
+
+.directory-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffe0b2; /* Light orange background */
+    border-radius: 4px;
+    font-size: 14px; /* Smaller font size */
+    color: #444;
+    position: relative;
+    width: 120px; /* Adjust width to fit icon and text */
+}
+
+.directory-icon {
+    font-size: 36px; /* Adjust icon size */
+    margin-bottom: 5px; /* Space between icon and text */
+    cursor: pointer;
+}
+
+.directory-info {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+    position: relative;
+    width: 100%;
+}
+
+.directory-name {
+    margin-bottom: 5px; /* Space between name and dropdown button */
+    margin-right: 2px;
+}
+
+.directory-dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #444;
+    margin-left: 2px; /* Add space between name and dots */
+}
+
+.directory-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffe0b2; /* Light orange background */
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    color: #444;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    border: none;
+    background: none;
+    width: 100%; /* Full width */
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: #ffd54f; /* Lighter orange background */
+}
+
+.create-directory-btn {
+    position: fixed; /* Fixes the button to the viewport */
+    bottom: 20px;    /* Distance from the bottom of the viewport */
+    right: 20px;     /* Distance from the right of the viewport */
+    background-color: #ff7043; /* Light red-orange background */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes the button circular */
+    padding: 10px;    /* Adjust size of the circle */
+    width: 50px;      /* Width of the circle */
+    height: 50px;     /* Height of the circle */
+    display: flex;    /* Center icon vertically and horizontally */
+    align-items: center; 
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 10; /* Ensure it's on top of other elements */
+    font-size: 24px; /* Adjust icon size */
+}
+
+.create-directory-btn:hover {
+    background-color: #f4511e; /* Darker red-orange on hover */
+}
+
+.floating-window {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff3e0; /* Light off-white background */
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-option {
+    padding: 10px;
+    background-color: #ffa726; /* Orange background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.floating-option:hover {
+    background-color: #ff9800; /* Darker orange on hover */
+}
+
+.close-window {
+    padding: 5px 10px;
+    background-color: #e0e0e0; /* Light gray background */
+    color: #444;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.close-window:hover {
+    background-color: #bdbdbd; /* Darker gray on hover */
+}
+
+.directory-edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.save-btn {
+    padding: 5px 10px;
+    background-color: #f4511e; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #ff9800; /* Darker green on hover */
+}

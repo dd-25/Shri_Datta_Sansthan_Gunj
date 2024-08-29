@@ -1,0 +1,144 @@
+.home-container {
+    margin: 0;
+    padding: 0;
+}
+
+.image-slider-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFE0B2;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide img {
+    width: 50%;
+    height: auto;
+}
+
+.description {
+    width: 50%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+@keyframes slide-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    16.67% {
+        transform: translateX(0);
+    }
+
+    33.33% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    66.67% {
+        transform: translateX(-200%);
+    }
+
+    83.33% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+.slider .slide {
+    animation: slide-animation 20s infinite;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FFF3E0;
+}
+
+.info-box {
+    width: 30%;
+    background-color: #FFF8E1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.services-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #FFCC80;
+    padding: 20px 0;
+}
+
+.service-box {
+    background-color: #FFB74D;
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 10px 0;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-box:hover {
+    background-color: #FFA726;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .service-box {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+
+    .info-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

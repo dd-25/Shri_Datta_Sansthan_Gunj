@@ -1,0 +1,83 @@
+.institution-name-section {
+    text-align: center;
+    background-color: #FFA726;
+    padding: 20px;
+}
+
+.institution-name {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #FF7043;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    position: relative; /* Added for dropdown positioning */
+}
+
+.navbar ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.navbar ul li i {
+    margin-right: 5px;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #FF7043;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Aligns dropdown below the toggle */
+    left: 0;
+    text-align: left;
+}
+
+.dropdown-menu a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #FF5722;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

@@ -1,0 +1,24 @@
+/* Layout.css */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    /* Style your header */
+  }
+  
+  .content {
+    flex: 1; /* Takes up remaining space */
+  }
+  
+  .footer {
+    /* Style your footer */
+  }
+  
