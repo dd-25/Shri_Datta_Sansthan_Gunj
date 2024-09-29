@@ -1,8 +1,4 @@
-.home-container {
-    margin: 0;
-    padding: 0;
-}
-
+/* Image Slider Section */
 .image-slider-section {
     display: flex;
     justify-content: center;
@@ -11,66 +7,61 @@
     padding: 20px 0;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .slider {
-    width: 80%;
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    transition: transform 1s ease-in-out; /* Smooth transition */
 }
 
 .slide {
     display: flex;
+    flex: 0 0 100%;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    transition: transform 1s ease-in-out;
+    text-align: center;
 }
 
 .slide img {
-    width: 50%;
-    height: auto;
+    max-width: 50%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
 .description {
-    width: 50%;
-    padding: 20px;
-    font-size: 18px;
+    max-width: 40%;
+    font-size: 1.2rem;
+    color: #333;
 }
 
-@keyframes slide-animation {
-    0% {
-        transform: translateX(0);
-    }
-
-    16.67% {
-        transform: translateX(0);
-    }
-
-    33.33% {
-        transform: translateX(-100%);
-    }
-
-    50% {
-        transform: translateX(-100%);
-    }
-
-    66.67% {
-        transform: translateX(-200%);
-    }
-
-    83.33% {
-        transform: translateX(-200%);
-    }
-
-    100% {
-        transform: translateX(-300%);
-    }
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    border-radius: 50%;
 }
 
-.slider .slide {
-    animation: slide-animation 20s infinite;
+.nav-button.prev {
+    left: 10px;
 }
 
+.nav-button.next {
+    right: 10px;
+}
+
+/* Info Section */
 .info-section {
     display: flex;
     justify-content: space-between;
@@ -84,6 +75,8 @@
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .scroll-content {
@@ -91,6 +84,7 @@
     overflow-y: auto;
 }
 
+/* Services Section */
 .services-section {
     display: flex;
     flex-wrap: wrap;
@@ -114,6 +108,7 @@
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
 
 .service-box:hover {
@@ -123,9 +118,8 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
     .services-section {
-        flex-direction: row;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
     }
 
     .service-box {

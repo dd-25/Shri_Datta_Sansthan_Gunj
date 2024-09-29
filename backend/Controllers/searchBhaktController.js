@@ -9,9 +9,9 @@ async function showBhakts(req, res) {
         // You can add validation/sanitization logic here if necessary
         // include pagination and indexing
 
-        // console.log(filters);
+        console.log(filters);
         const results = await Bhakt.find(filters).exec();
-        
+        console.log(results);
         res.status(200).json(results);
     } catch (error) {
         console.error('Error during search:', error); // Log the error for debugging

@@ -1,0 +1,42 @@
+.puja-booking {
+    text-align: center;
+}
+
+.open-calendar-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #ff9549;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.payment-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+p {
+    color: green;
+    font-size: 16px;
+}
+
+.invalid-date {
+    pointer-events: none;
+    /* Disable clicking on invalid dates */
+    color: lightgray;
+    /* Gray out invalid dates */
+}
+
+.valid-date {
+    color: black;
+    /* Keep valid dates clickable and bold */
+}

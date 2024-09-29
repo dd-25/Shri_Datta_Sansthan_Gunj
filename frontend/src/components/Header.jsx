@@ -17,14 +17,13 @@ function Header() {
     return (
         <div>
             <section className="institution-name-section">
-                <h1 className="institution-name">Datta Maharaj Sanstha, Gunj</h1>
+                <h1 className="institution-name">Datta Maharaj Sansthan, Gunj</h1>
             </section>
 
             <nav className="navbar">
                 <ul>
                     <li><a href="/home">Home</a></li>
                     <li><a href="/aboutus">About Us</a></li>
-                    <li><a href="/contactus">Contact Us</a></li>
                     <li><a href="/searchBhakt">Search Bhakt</a></li>
                     <li><a href="/audio">Audio</a></li>
                     <li><a href="/gallery">Gallery</a></li>
@@ -35,8 +34,12 @@ function Header() {
                             </a>
                             <div className="dropdown-menu">
                                 <a href="/bhakt">Edit Profile</a>
+                                {bhakt.role === 'admin' ?
+                                <a href="/admindashboard">Admin Dashboard</a>
+                                :
+                                null
+                                }
                                 <a href="#" onClick={handleLogout}>Logout</a>
-                                {bhakt.role === 'admin' && <a href="/admindashboard">Admin Dashboard</a>}
                             </div>
                         </li>
                     ) : (

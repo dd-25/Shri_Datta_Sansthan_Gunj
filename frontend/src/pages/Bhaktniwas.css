@@ -1,0 +1,79 @@
+.niwas-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff5e1; /* Light orange background to match temple theme */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    color: #ff7f27; /* Darker orange for titles */
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .open-calendar-btn {
+    background-color: #ff7f27;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .open-calendar-btn:hover {
+    background-color: #e06b21;
+  }
+  
+  .payment-btn {
+    background-color: #28a745; /* Green for payment confirmation */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-btn:hover {
+    background-color: #218838;
+  }
+  
+  .valid-date {
+    background-color: #ff7f27 !important; /* Available dates in orange */
+    color: white !important;
+  }
+  
+  .invalid-date {
+    background-color: #ccc !important; /* Disabled dates in gray */
+  }
+  
+  p {
+    color: #ff7f27; /* Message text in orange */
+    font-size: 14px;
+    margin-top: 15px;
+  }  

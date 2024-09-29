@@ -8,14 +8,14 @@ const nodemailer = require('nodemailer');
 async function createBhakt(req, res) {
   try {
     let formData = req.body;
-    const phone = formData.phone.toString();
-
+    const phone = [formData.phone.toString()];
+    const email = [formData.email.toString()];
     // Generate username and password
     const username = "DG-" + phone;
     const password = uuidv4().replace(/-/g, '').slice(0, 10);
     const bhaktSince = Date.now();
     const last_visit = bhaktSince;
-    formData = { ...formData, username, password, bhaktSince, last_visit };
+    formData = { ...formData, username, password, bhaktSince, last_visit, phone, email };
 
     // Create and save the new Bhakt
     const newBhakt = new Bhakt(formData);
@@ -32,7 +32,7 @@ async function createBhakt(req, res) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER, // replace with admin's email
-      to: newBhakt.email,
+      to: newBhakt.email[0],
       subject: 'Your Bhakt Registration Details',
       text: `Dear ${newBhakt.name},\n\nYour registration is successful. Here are your login details:\nUsername: ${newBhakt.username}\nPassword: ${newBhakt.password}\n\nPlease keep this information safe.\n\nRegards,\nTemple Admin`
     };

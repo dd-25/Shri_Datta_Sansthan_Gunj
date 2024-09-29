@@ -72,46 +72,43 @@ function SearchBhakt() {
       setAlertMessage('Please select a field');
       return;
     }
-
     if (field === 'address') {
-      if (!country) {
-        setAlertMessage('Please select a country');
-        return;
-      }
-      if (!state) {
-        setAlertMessage('Please select a state');
-        return;
-      }
-      if (!city) {
-        setAlertMessage('Please select a city');
+      if (!country || !state || !city) {
+        setAlertMessage('Please select a country, state, and city');
         return;
       }
 
       const addressFilter = { country, state, city };
-      setFilters((prevFilters) => ({ ...prevFilters, address: addressFilter }));
-      setField('');
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        "address.country": country,
+        "address.state": state,
+        "address.city": city
+      }));
       setAlertMessage('');
-      setCountry('');
-      setState('');
-      setCity('');
     } else {
       if (!value) {
         setAlertMessage('Please enter a value for the selected filter');
         return;
       }
 
-      setFilters((prevFilters) => ({ ...prevFilters, [field]: value }));
-      setField('');
-      setValue('');
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [field]: value
+      }));
       setAlertMessage('');
     }
 
-    fetchFilteredData();
+    setField('');
+    setCountry('');
+    setState('');
+    setCity('');
+    setValue('');
   };
 
   const fetchAllBhakt = () => {
     axios
-      .post('/api/searchBhakt', { ...filters, role: 'bhakt' }) // Change to your API endpoint for fetching all Bhakt data
+      .post('/api/searchBhakt', { ...filters, role: 'bhakt' })
       .then((response) => {
         setFilteredBhakt(response.data);
       })
@@ -122,6 +119,7 @@ function SearchBhakt() {
   };
 
   const fetchFilteredData = () => {
+    console.log(filters);
     axios
       .post('/api/searchBhakt', { ...filters, role: 'bhakt' })
       .then((response) => {
@@ -135,15 +133,17 @@ function SearchBhakt() {
 
   const handleRemoveFilter = (key) => {
     setFilters((prevFilters) => {
-      const newFilters = { ...prevFilters };
-      delete newFilters[key];
-      return newFilters;
+      const updatedFilters = { ...prevFilters };
+      delete updatedFilters[key];
+      return updatedFilters;
     });
   };
 
   useEffect(() => {
     if (Object.keys(filters).length > 0) {
       fetchFilteredData();
+    } else {
+      fetchAllBhakt();
     }
   }, [filters]);
 
@@ -192,8 +192,8 @@ function SearchBhakt() {
               <td>{calculateAge(bhaktItem.dob)}</td>
               <td>{bhaktItem.address ? `${bhaktItem.address.city}, ${bhaktItem.address.state}, ${bhaktItem.address.country}` : 'N/A'}</td>
               <td>{bhaktItem.occupation}</td>
-              <td>{bhaktItem.phone}</td>
-              <td>{bhaktItem.email}</td>
+              <td>{bhaktItem.phone[0]}</td>
+              <td>{bhaktItem.email[0]}</td>
               {bhakt && bhakt.role === 'admin' && (
                 <>
                   <td>{bhaktItem.puja_done}</td>
@@ -224,7 +224,7 @@ function SearchBhakt() {
           type="text"
           name="value"
           id="value"
-          placeholder="Enter name"
+          placeholder="Enter Name"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
@@ -275,33 +275,42 @@ function SearchBhakt() {
       )}
 
       {field === 'occupation' && (
-        <select name="value" id="value" value={value} onChange={(e) => setValue(e.target.value)}>
-          <option value="">Select occupation</option>
-          <option value="occupation1">Occupation 1</option>
-          <option value="occupation2">Occupation 2</option>
-          <option value="occupation3">Occupation 3</option>
-        </select>
+        <input
+          type="text"
+          name="value"
+          id="value"
+          placeholder="Enter occupation"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
       )}
 
       <button onClick={handleAddFilter}>Add Filter</button>
+
       {alertMessage && <p>{alertMessage}</p>}
 
-      {Object.keys(filters).map((key) => (
-        <div key={key}>
-          {key}: {typeof filters[key] === 'object' ? JSON.stringify(filters[key]) : filters[key]}
+      <h2>Active Filters:</h2>
+      <ul>
+        {Object.entries(filters).map(([key, value]) => (
+        <li key={key}>
+          {key}: {typeof value === 'object' ? JSON.stringify(value) : value}
           <button onClick={() => handleRemoveFilter(key)}>Remove</button>
-        </div>
-      ))}
+        </li>
+        ))}
+      </ul>
 
       {renderTable()}
 
       <div className="pagination">
-        {currentPage > 1 && (
-          <button onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
-        )}
-        {currentPage < totalPages && (
-          <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
-        )}
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            className={index + 1 === currentPage ? 'active' : ''}
+            onClick={() => setCurrentPage(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </>
   );

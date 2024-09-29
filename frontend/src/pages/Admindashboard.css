@@ -1,205 +1,235 @@
-.admin-dashboard {
-    max-width: 1200px;
-    margin: 0 auto;
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-dashboard {
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #fff8e1; /* Light off-white background */
-}
-
-.admin-dashboard h1 {
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h1 {
     text-align: center;
+    color: #d35400; /* Orange */
+    font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
-}
-
-.admin-nav {
+  }
+  
+  /* Navigation */
+  .admin-nav {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-}
-
-.admin-nav button {
+    gap: 20px;
+  }
+  
+  .admin-nav button {
     padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #ffa726; /* Orange button */
-    color: white;
     border: none;
-    border-radius: 4px;
+    background-color: #e67e22; /* Orange */
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.admin-nav button.active {
-    background-color: #ff9800; /* Darker orange for active button */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.admin-nav button:hover {
-    background-color: #ff9800; /* Darker orange on hover */
-}
-
-.admin-section {
-    background: #fff3e0; /* Soft orange background */
+    transition: background-color 0.3s;
+  }
+  
+  .admin-nav button.active {
+    background-color: #d35400; /* Darker Orange */
+  }
+  
+  .admin-nav button:hover {
+    background-color: #d35400; /* Darker Orange */
+  }
+  
+  /* Section Styling */
+  .admin-section-content {
+    margin-top: 20px;
+  }
+  
+  .notifications-section,
+  .homepage-section {
+    background-color: #fbeee6; /* Light Orange */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.admin-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #444;
-    border-bottom: 2px solid #ffa726; /* Orange border */
-    padding-bottom: 10px;
-}
-
-.admin-section h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #444;
-    border-bottom: 2px solid #ffa726; /* Orange border */
-    padding-bottom: 10px;
-}
-
-.notification-nav {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Notification Section */
+  .notification-nav {
     display: flex;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
-}
-
-.notification-nav button {
+  }
+  
+  .notification-nav button {
     padding: 8px 15px;
-    margin: 0 10px;
-    background-color: #ffa726;
-    color: white;
+    background-color: #e67e22; /* Orange */
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.notification-nav button.active {
-    background-color: #ff9800;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.notification-nav button:hover {
-    background-color: #ff9800;
-}
-
-.notification-type {
-    margin-bottom: 30px;
-}
-
-.notification-input {
-    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .notification-nav button.active {
+    background-color: #d35400; /* Darker Orange */
+  }
+  
+  .notification-nav button:hover {
+    background-color: #d35400; /* Darker Orange */
+  }
+  
+  /* Notifications Input & List */
+  .notification-input {
+    width: calc(100% - 160px);
     padding: 10px;
-    border: 1px solid #ffcc80; /* Light orange border */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.add-notification-btn {
-    padding: 8px 15px;
-    background-color: #ffa726;
-    color: white;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-notification-btn {
+    padding: 10px 20px;
+    background-color: #d35400; /* Orange */
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.add-notification-btn:hover {
-    background-color: #ff9800;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.notification-list {
+    transition: background-color 0.3s;
+  }
+  
+  .add-notification-btn:hover {
+    background-color: #c0392b; /* Darker Red-Orange */
+  }
+  
+  /* Notification List */
+  .notification-list {
     list-style-type: none;
     padding: 0;
-}
-
-.notification-item {
+    margin: 20px 0 0 0;
+  }
+  
+  .notification-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffe0b2; /* Light orange background */
-    padding: 10px;
+    background-color: #fde3d4; /* Very Light Orange */
+    padding: 10px 15px;
     margin-bottom: 10px;
-    border-radius: 4px;
-}
-
-.notification-edit-input {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ffcc80;
-    border-radius: 4px;
-}
-
-.action-buttons {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .notification-item:hover {
+    background-color: #f6b48e; /* Light Orange */
+  }
+  
+  .notification-edit-input {
+    width: calc(100% - 80px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Actions for Notifications */
+  .notification-actions {
     display: flex;
-    gap: 8px;
-}
-
-.edit-icon,
-.delete-icon,
-.save-icon,
-.cancel-icon {
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.edit-icon:hover,
-.delete-icon:hover,
-.save-icon:hover,
-.cancel-icon:hover {
-    color: #ff9800;
-}
-
-.homepage-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.homepage-image-input {
-    margin-bottom: 20px;
-}
-
-.admin-homepage-image-preview {
-    max-width: 20%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius:1px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.homepage-description-input {
-    width: 100%;
-    min-height: 100px;
-    padding: 10px;
-    border: 1px solid #ffcc80;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.update-homepage-btn {
-    padding: 10px 20px;
-    background-color: #ffa726;
-    color: white;
+    gap: 10px;
+  }
+  
+  .notification-action-btn {
+    background: none;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.update-homepage-btn:hover {
-    background-color: #ff9800;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    color: #d35400; /* Orange */
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .notification-action-btn:hover {
+    color: #e67e22; /* Brighter Orange */
+  }
+  
+  /* Image Slider Section */
+  .image-input,
+  .description-input {
+    width: calc(100% - 160px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-image-btn {
+    padding: 10px 20px;
+    background-color: #d35400; /* Orange */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-image-btn:hover {
+    background-color: #c0392b; /* Darker Red-Orange */
+  }
+  
+  /* Image Slider List */
+  .image-slider-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .image-slider-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fde3d4; /* Very Light Orange */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .slider-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Actions */
+  .description-actions,
+  .notification-edit-actions,
+  .description-edit-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .description-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d35400; /* Orange */
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .description-action-btn:hover {
+    color: #e67e22; /* Brighter Orange */
+  }
+  
+  .description-edit-input {
+    width: calc(100% - 80px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  

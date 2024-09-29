@@ -7,19 +7,19 @@ function Footer() {
     <footer className="footer">
       <div className="footer-column">
         <div className="social-media">
-          <a href="#facebook" aria-label="Facebook">
+          <a href="https://www.instagram.com/dhruv_25kt/" aria-label="Facebook">
             <FaFacebook className="social-icon" />
             <span className="social-text">Facebook</span> 
           </a>
-          <a href="#twitter" aria-label="Twitter">
+          <a href="https://www.linkedin.com/in/dhruv-mundada-7b1a42259/" aria-label="Twitter">
             <FaTwitter className="social-icon" />
             <span className="social-text">Twitter</span> 
           </a>
-          <a href="#instagram" aria-label="Instagram">
+          <a href="https://www.instagram.com/dhruv_25kt/" aria-label="Instagram">
             <FaInstagram className="social-icon" />
             <span className="social-text">Instagram</span> 
           </a>
-          <a href="#youtube" aria-label="YouTube">
+          <a href="https://www.linkedin.com/in/dhruv-mundada-7b1a42259/" aria-label="YouTube">
             <FaYoutube className="social-icon" />
             <span className="social-text">YouTube</span> 
           </a>

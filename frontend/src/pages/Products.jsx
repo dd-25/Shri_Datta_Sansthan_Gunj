@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Loggedinicon() {
+function Products() {
   return (
     <div>
-      
+      hello products
     </div>
   )
 }
 
-export default Loggedinicon
+export default Products

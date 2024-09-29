@@ -45,6 +45,24 @@ app.use('/api/content', contentRoutes);
 const audioRoutes = require('./Routes/audio');
 app.use('/api/audio', audioRoutes);
 
+const notificationRoutes = require('./Routes/notifications');
+app.use('/api/notifications', notificationRoutes);
+
+const donateRoutes = require('./Routes/donate');
+app.use('/api/donate', donateRoutes);
+
+const imagesliderRoutes = require('./Routes/imageslider');
+app.use('/api/imageslider', imagesliderRoutes);
+
+const profileRoutes = require('./Routes/profile');
+app.use('/api/profile', profileRoutes);
+
+const pujaslotRoutes = require('./Routes/pujaslot');
+app.use('/api/pujaslot', pujaslotRoutes);
+
+const niwasRoutes = require('./Routes/niwas');
+app.use('/api/niwas', niwasRoutes);
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

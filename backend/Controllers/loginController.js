@@ -18,10 +18,13 @@ async function validateLogin(req, res) {
 
         // Generate token and set cookie
         const token = setBhakt(bhakt);
+        const expiryDate = new Date();
+        expiryDate.setHours(expiryDate.getHours() + 720);
         res.cookie('uid', token, {
             httpOnly: false,
             secure: false, // Set to true in production
             sameSite: 'strict',
+            expires: expiryDate
         });
 
         return res.status(200).json({ success: true, message: 'You are logged in successfully' });
